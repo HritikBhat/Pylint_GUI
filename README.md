@@ -1,5 +1,5 @@
 # Pylint_GUI
-
+(Author:HRITIK BHAT)
 
 Pylint is a source-code, bug and quality checker for the Python programming language. It follows the style recommended by PEP 8, the Python style guide.
 
