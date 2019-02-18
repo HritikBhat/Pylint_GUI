@@ -1,12 +1,14 @@
 """ Author: Hritik Bhat"""
 
-
 import subprocess
 from tkinter import Button, Text, Label, Tk, Entry, ttk
 import tkinter as tk
 
-def clicked(txt1,strval):
+def install_pylint():
+     icmd="pip install pylint"
+     inst = subprocess.run(icmd, shell=True)
     
+def clicked(txt1,strval):
     if strval not in txt1['values']:
         txt1['values'] = (*txt1['values'], strval)
         
@@ -31,6 +33,9 @@ TXT1.current()
 
 SETBTN = Button(ROOT, text="Set", height=1, width=10, command=lambda: clicked(TXT1,TXT1.get()))
 SETBTN.place(x=500, y=35)
+
+INTBTN = Button(ROOT, text="Install Pylint Library", height=1, width=30, command=lambda: install_pylint())
+INTBTN.place(x=450, y=95)
 
 
 DATA = Text(ROOT, width=95, height=80)
