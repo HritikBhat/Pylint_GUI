@@ -1,3 +1,6 @@
+""" Author: Hritik Bhat"""
+
+
 import subprocess
 from tkinter import Button, Text, Label, Tk, Entry, ttk
 import tkinter as tk
