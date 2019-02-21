@@ -1,6 +1,6 @@
 """ Author: Hritik Bhat"""
 
-import subprocess
+import subprocess,re
 from tkinter import Button, Text, Label, Tk, Entry, ttk
 import tkinter as tk
 
@@ -18,9 +18,17 @@ def clicked(txt1,strval):
         content = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         DATA.insert("1.0", content.stdout.decode('utf-8'))
     except subprocess.CalledProcessError as err:
-        DATA.insert("1.0", err.output.decode('utf-8'))
+        text_show=err.output.decode('utf-8')
+        DATA.insert("1.0",text_show)
+        
+        for i in text_show.splitlines():
+         if re.search("^Your code",i) is not None:
+             display_score.set(i)
+             break
+
 
 ROOT=Tk()
+display_score=tk.StringVar()
 ROOT.title("Pylint GUI")
 ROOT.geometry("700x900")
 LB1=Label(ROOT, text="Path:")
@@ -41,3 +49,6 @@ INTBTN.place(x=450, y=95)
 DATA = Text(ROOT, width=95, height=80)
 DATA.configure(font=("Black Arial", "10"))
 DATA.place(x=15, y=130)
+
+LB2=Label(ROOT, textvariable=display_score)
+LB2.place(x=20, y=100)
