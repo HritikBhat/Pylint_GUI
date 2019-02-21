@@ -5,6 +5,6 @@ Pylint is a source-code, bug and quality checker for the Python programming lang
 
 But writing commands is irritating sometimes,so I have made it in GUI form so that anyone can access it without writing commands in CMD.
 
-IT WORKS FOR WINDOWS FOR NOW!
+IT WORKS FOR WINDOWS ONLY!
 
 Have FUN!!! ;)
